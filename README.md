@@ -1,2 +1,2 @@
 # miniek.dev
-My personal website!
+My personal website! Idk what to do with it yet though lol.
