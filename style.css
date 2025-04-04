@@ -22,6 +22,10 @@ body {
     font-size: 64px;
     place-self: center;
     position: relative;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #welcomeText::after {
