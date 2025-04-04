@@ -32,7 +32,7 @@ body {
     height: 1em;
     width: 2px;
     right: -10px;
-    top: 0em;
+    top: 0.1em;
     animation: blinkCaret 1s step-start infinite;
 }
 
