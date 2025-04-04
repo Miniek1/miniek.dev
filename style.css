@@ -13,7 +13,7 @@ body {
     color: var(--text-color);
     display: grid;
     height: 100vh;
-    cursor: d;
+    cursor: none;
 }
 
 #welcomeText {
