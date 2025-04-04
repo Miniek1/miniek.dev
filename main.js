@@ -1,6 +1,5 @@
 const cursor = document.querySelector(".cursor");
 
-
 document.addEventListener("mouseover", () => {
     cursor.style.display = "block";
 });
@@ -16,3 +15,16 @@ function trackCursor(evt) {
     const h = cursor.clientHeight;
     cursor.style.transform = `translate(${evt.clientX - w / 2}px, ${evt.clientY - h / 2}px)`;
 }
+
+let i = 0;
+let welcomeText = "Hi, I'm Miniek";
+function typingAnimation() {
+    if (i < welcomeText.length) {
+        document.getElementById("welcomeText").innerHTML += welcomeText.charAt(i);
+        i++;
+        setTimeout(typingAnimation, 50);
+    }
+}
+
+
+typingAnimation()

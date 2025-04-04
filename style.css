@@ -13,14 +13,33 @@ body {
     color: var(--text-color);
     display: grid;
     height: 100vh;
-    cursor: none;
+    cursor: d;
 }
 
-body h1 {
+#welcomeText {
     font-family: Roboto, system-ui;
     font-weight: 300;
     font-size: 64px;
     place-self: center;
+    position: relative;
+}
+
+#welcomeText::after {
+    display: block;
+    position: absolute;
+    content: "";
+    background-color: white;
+    height: 1em;
+    width: 2px;
+    right: -10px;
+    top: 0em;
+    animation: blinkCaret 1s step-start infinite;
+}
+
+@keyframes blinkCaret {
+    50% {
+        opacity: 0;
+    }
 }
 
 .cursor {
