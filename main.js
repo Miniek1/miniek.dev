@@ -20,7 +20,7 @@ let i = 0;
 let welcomeText = "Hi, I'm Miniek";
 function typingAnimation() {
     if (i < welcomeText.length) {
-        document.getElementById("welcomeText").innerHTML += welcomeText.charAt(i);
+        document.getElementById("actualText").innerHTML += welcomeText.charAt(i);
         i++;
         setTimeout(typingAnimation, 50);
     }

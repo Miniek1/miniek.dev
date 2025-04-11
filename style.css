@@ -28,17 +28,16 @@ body {
     user-select: none;
 }
 
-#welcomeText::after {
-    display: block;
-    position: absolute;
-    content: "";
-    background-color: white;
+.caret {
+    display: inline-block;
+    background-color: var(--text-color);
     height: 1em;
     width: 2px;
-    right: -10px;
-    top: 0.1em;
+    margin-left: 5px;
     animation: blinkCaret 1s step-start infinite;
+    vertical-align: -0.5rem;
 }
+
 
 @keyframes blinkCaret {
     50% {
