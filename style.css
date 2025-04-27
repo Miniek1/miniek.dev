@@ -1,58 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+
 :root {
-    --background-color: #141314;
-    --text-color: #e6e1e3;
+    --background-color: #0f0f1c;
+    --background-lifted: #171726;
+    --accent-primary: #9f6eff;
+    --accent-secondary: #ff7eb9;
+    --accent-highlight: #7afcff;
+    --accent-minty: #b9fbc0;
+    --text-color: #d6d6e7;
 }
 
 * {
     margin: 0;
     padding: 0;
+    color: var(--text-color);
+    border-radius: 5px;
+
+    font-family: "Sofia Sans";
+    line-height: 1.5rem;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
     background-color: var(--background-color);
-    color: var(--text-color);
     display: grid;
-    height: 100vh;
-    cursor: none;
+    grid-template:
+    "top"
+    "center"
+    "bottom";
 }
 
-#welcomeText {
-    font-family: Roboto, system-ui;
-    font-weight: 300;
-    font-size: 64px;
-    place-self: center;
-    position: relative;
-
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+body small {
+    font-size: 12px;
+    filter: brightness(70%);
 }
 
-.caret {
-    display: inline-block;
-    background-color: var(--text-color);
-    height: 1em;
-    width: 2px;
-    margin-left: 5px;
-    animation: blinkCaret 1s step-start infinite;
-    vertical-align: -0.5rem;
+body h1 {
+    grid-area: center;
+    justify-self: center;
+    align-self: start;
 }
 
+.section {
+    background-color: var(--background-lifted); 
+    width: fit-content;
+    padding: 2rem;
+    border: solid black 1px;
+    grid-area: center;
+    justify-self: center;
+    align-self: center;
+}
 
-@keyframes blinkCaret {
-    50% {
-        opacity: 0;
+#intro {
+    display: flex;
+    justify-content: space-between ;
+    align-items: flex-start;
+    width: clamp(10rem, 80%, 40rem);
+}
+
+#intro img {
+    width: 15rem;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .section {
+        margin: 2rem;
     }
-}
-
-.cursor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--text-color);
-    transition: transform 0.05s ease;
+    
+    #intro {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        gap: 5rem;
+    }
 }
