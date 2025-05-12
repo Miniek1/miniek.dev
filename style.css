@@ -26,11 +26,12 @@ html, body {
 
 body {
     background-color: var(--background-color);
-    display: grid;
-    grid-template:
-    "top"
-    "center"
-    "bottom";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
 }
 
 body small {
@@ -38,32 +39,41 @@ body small {
     filter: brightness(70%);
 }
 
-body h1 {
-    grid-area: center;
-    justify-self: center;
-    align-self: start;
-}
-
 .section {
     background-color: var(--background-lifted); 
     width: fit-content;
     padding: 2rem;
     border: solid black 1px;
-    grid-area: center;
-    justify-self: center;
-    align-self: center;
 }
 
 #intro {
     display: flex;
     justify-content: space-between ;
-    align-items: flex-start;
     width: clamp(10rem, 80%, 40rem);
 }
 
 #intro img {
     width: 15rem;
     height: auto;
+}
+
+#music {
+    height: fit-content;
+    width: clamp(10rem, 80%, 40rem);
+
+    display: flex;
+}
+
+#music img {
+    height: 8rem;
+}
+
+#music div {
+    line-height: 2rem;
+}
+
+#music div p1 {
+    filter: brightness(70%);
 }
 
 @media (max-width: 600px) {
