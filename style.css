@@ -62,17 +62,25 @@ body small {
     width: clamp(10rem, 80%, 40rem);
 
     display: flex;
+    flex-direction: column;
 }
 
 #music img {
     height: 8rem;
+    width: 8rem;
+}
+
+#music h1 {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 1rem;
 }
 
 #music div {
     line-height: 2rem;
 }
 
-#music div p1 {
+#music div p {
     filter: brightness(70%);
 }
 
