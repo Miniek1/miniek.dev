@@ -4,6 +4,7 @@ function sendPet() {
     socket.emit("pet");
 }
 
+
 socket.on("petCount", (pets) => {
     document.getElementById("petCounter").textContent = pets;
     updatePetCounter(formatNumber(pets));
@@ -13,10 +14,13 @@ window.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
 
     if (params.get("discordpet") === "true") {
-        sendPet();
-        const url = new URL(window.location.href);
-        url.search = "";
-        window.location.replace(url.toString());
+        socket.on("connect", () => {
+            socket.emit("pet", () => {
+                const url = new URL(window.location.href);
+                url.search = "";
+                window.location.replace(url.toString());
+            });
+        });
     }
 });
 

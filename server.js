@@ -21,16 +21,18 @@ app.get('/pets', (req, res) => {
 io.on('connection', (socket) => {
     io.emit("petCount", parseInt(fs.readFileSync('petList.txt', 'utf8'), 10));
 
-    socket.on("pet" , socket => {
+    socket.on("pet", (ack) => {
         const data = fs.readFileSync('petList.txt', 'utf8');
         let pets = parseInt(data, 10);
         pets++;
-
+        
         fs.writeFileSync('petList.txt', pets.toString());
         io.emit("petCount", pets);
-    })
+
+        if (ack) ack();
+});
 });
 
 server.listen(3000, () => {
-    console.log('server running at http://localhost:3000');
+    console.log('server running!');
 });
