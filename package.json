@@ -1,0 +1,24 @@
+{
+  "name": "miniek.dev-pet-counter",
+  "version": "1.0.0",
+  "description": "counts pets for miniek.dev website",
+  "homepage": "https://github.com/Miniek1/miniek.dev#readme",
+  "bugs": {
+    "url": "https://github.com/Miniek1/miniek.dev/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miniek1/miniek.dev.git"
+  },
+  "license": "ISC",
+  "author": "Miniek1",
+  "type": "commonjs",
+  "main": "pets.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}
