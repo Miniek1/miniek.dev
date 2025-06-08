@@ -9,6 +9,17 @@ socket.on("petCount", (pets) => {
     updatePetCounter(formatNumber(pets));
 })
 
+window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("discordpet") === "true") {
+        sendPet();
+        const url = new URL(window.location.href);
+        url.search = "";
+        window.location.replace(url.toString());
+    }
+});
+
 function updatePetCounter(pets) {
     const counter = document.getElementById('petCounter');
     counter.textContent = pets;
