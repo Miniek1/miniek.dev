@@ -5,15 +5,38 @@
     <link href="style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THANK YOU :3333</title>
+
+    <style>
+        #petCounter {
+            padding: 5rem 0 5rem 0;
+            font-size: 96px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .section{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section h1 {
+            align-self: center;
+        }
+    </style>
 </head>
 <body>
     <div class="section">
-            <h1 id="petCounter">0</h1>
+        <h1>THANK YOUUUU!!</h1>
+        <p> here's a pet counter :3</p>
+        <h1 id="petCounter"></h1>
 
-            <button onclick="sendPet();">Pet!</button>
+        <img src="assets/img/happi.gif">
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="main.js"></script>
+    <script src="petCounter.js"></script>
 </body>
 </html>

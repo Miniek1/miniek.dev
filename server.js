@@ -11,7 +11,7 @@ const io = new Server(server);
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(join(__dirname, 'public/pets.html'));
+    res.sendFile(join(__dirname, 'public/index.html'));
 });
 app.get('/pets', (req, res) => {
     res.sendFile(join(__dirname, 'public/pets.html'));
@@ -27,9 +27,6 @@ io.on('connection', (socket) => {
         pets++;
 
         fs.writeFileSync('petList.txt', pets.toString());
-
-        console.log(`pet count is now ${pets}`)
-
         io.emit("petCount", pets);
     })
 });
